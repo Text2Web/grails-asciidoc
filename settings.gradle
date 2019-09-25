@@ -1,2 +1,14 @@
-rootProject.name = 'grails-asciidoc'
+rootProject.name = 'GrailsAsciidoc'
+
+
+// Other Plugin
+File otherPlugins = file("$supportPlugin")
+if (otherPlugins.exists()){
+    otherPlugins.list().each {
+        if(it != "empty"){
+            include(it)
+            project(":${it}").projectDir = file( "$supportPlugin" + it)
+        }
+    }
+}
 

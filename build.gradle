@@ -7,6 +7,7 @@ buildscript {
         classpath "org.grails.plugins:hibernate5:7.0.0"
         classpath "gradle.plugin.com.github.erdi.webdriver-binaries:webdriver-binaries-gradle-plugin:2.0"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:3.0.10"
+        classpath 'org.ajoberstar.grgit:grgit-core:3.1.1'
     }
 }
 
@@ -22,7 +23,11 @@ apply plugin:"org.grails.grails-gsp"
 apply plugin:"com.bertramlabs.asset-pipeline"
 
 repositories {
+    mavenLocal()
+    jcenter()
     maven { url "https://repo.grails.org/grails/core" }
+    maven { url "https://dl.bintray.com/hmtmcse/maven/" }
+    maven { url "http://central.maven.org/maven2/" }
 }
 
 configurations {
@@ -33,6 +38,17 @@ configurations {
 }
 
 dependencies {
+    
+    File otherPlugins = file("$supportPlugin")
+    if (otherPlugins.exists()){
+        otherPlugins.list().each {
+            if(it != "empty"){
+                println("Added Grails Plugin: ${it}")
+                compile project(":${it}")
+            }
+        }
+    }
+    
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
@@ -100,4 +116,39 @@ tasks.withType(Test) {
 assets {
     minifyJs = true
     minifyCss = true
+}
+
+
+// Grails Plugin Dependency
+def projectDependencies = [
+        [
+                "name": "Grails Plugins",
+                "destination": supportPlugin,
+                "dependencies" : [
+                        "asciidoc": "https://github.com/hmtmcse/asciidoc.git",
+                        "java-text-and-file-util": "https://github.com/hmtmcse/java-text-and-file-util.git",
+                        "java-common": "https://github.com/hmtmcse/java-common.git"
+                ]
+        ]
+]
+
+task resolveDependentGrailsPlugin {
+    doLast {
+        String destinationPath = ""
+        projectDependencies.each { Map dependencyMap ->
+            destinationPath = dependencyMap.destination
+            println("Now Cloning ${dependencyMap.name}")
+            dependencyMap.dependencies.each { name, url ->
+                println("------------------------------------------------------------------------------------------")
+                def destination = file( destinationPath +  name)
+                try{
+                    println("Cloning Project ${name}")
+                    org.ajoberstar.grgit.Grgit.clone(dir: destination, uri: url)
+                }catch(Exception e){
+                    println(e.getMessage())
+                }
+                println("------------------------------------------------------------------------------------------\n")
+            }
+        }
+    }
 }
