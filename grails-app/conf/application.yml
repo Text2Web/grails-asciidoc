@@ -1,5 +1,7 @@
 ---
 grails:
+    resources:
+        pattern: ['/**']
     profile: web
     codegen:
         defaultPackage: grails.asciidoc

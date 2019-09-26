@@ -56,14 +56,13 @@ h2 {
 /*_____________________Intro___________________________*/
 .intro {
     max-width: 800px;
-    margin: 100px auto 0;
+    margin: 30px auto 0;
 }
 
 .quick-feature-wrapper{
     max-width: 800px;
     margin: auto;
 }
-
 /*_________________List Style Arrow_____________*/
 
 .list-style-arrow {
@@ -147,4 +146,11 @@ h2 {
 .footer a:hover {
     color: #139ac4;
 }
-
+@media (max-width: 575px) {
+    .footer ul {
+        direction: rtl;
+    }
+    .footer .list-inline li {
+        margin: 0 10px 0 0;
+    }
+}

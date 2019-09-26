@@ -1,0 +1,24 @@
+= Bismillah AsciiDoc Writer's Cheat Sheet
+H.M.Touhid Mia
+:toc:
+
+Convention over Configuration ::
+
+Layout Type ::
+
+. *Landing*
+. *Outline*
+. *Details*
+. *Video*
+. *Video Outline*
+
+
+View Type ::
+
+. *Text Search*
+. *Video Search*
+. *Up Coming*
+
+
+{blank} +
+

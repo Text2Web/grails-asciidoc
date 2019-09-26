@@ -1,0 +1,32 @@
+topics:
+  - name: 'Tutorial Page'
+    block: ''
+    id: ''
+    icon: ''
+    videoLink: ''
+    videoPlayer: 'YouTube | vimeo | html5'
+    description: ''
+    summery: ''
+    url: '/java/basic/bismillah'
+    file: ''
+    parent: ''
+    seo:
+seo:
+  title: ''
+  script:
+    - 'js codes here'
+    - 'second js codes'
+  tags:
+    - placeIn: 'head / body'
+      tag:
+        name: ''
+        content: ''
+        attrs:
+          - name: 'description'
+            content: 'something'
+
+settings:
+  layout: ''
+  fbComments: false
+  fbShare: false
+  linkedInShare: false

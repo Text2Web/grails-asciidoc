@@ -1,6 +1,28 @@
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
 /* Remove comment around @import statement below when using as a custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+
+html, body {
+    font-size: 100%
+}
+
+body {
+    background: #fff;
+    color: rgba(0, 0, 0, .8);
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Serif", "DejaVu Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1;
+    position: relative;
+    cursor: auto;
+    tab-size: 4;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased
+}
+
+
 .asciidoctor-content article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block
 }
@@ -26,10 +48,6 @@
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
-}
-
-.asciidoctor-content body {
-    margin: 0
 }
 
 .asciidoctor-content a {
@@ -187,23 +205,6 @@
     box-sizing: border-box
 }
 
-.asciidoctor-content html, body {
-    font-size: 100%
-}
-
-.asciidoctor-content body {
-    background: #fff;
-    color: rgba(0, 0, 0, .8);
-    padding: 0;
-    margin: 0;
-    font-family: "Noto Serif", "DejaVu Serif", serif;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 1;
-    position: relative;
-    cursor: auto
-}
-
 .asciidoctor-content a:hover {
     cursor: pointer
 }
@@ -247,10 +248,6 @@
 
 .asciidoctor-content .hide {
     display: none
-}
-
-.asciidoctor-content body {
-    -webkit-font-smoothing: antialiased
 }
 
 .asciidoctor-content img, object, svg {
@@ -536,10 +533,6 @@
     line-height: 1.6
 }
 
-.asciidoctor-content body {
-    tab-size: 4
-}
-
 .asciidoctor-content h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 {
     line-height: 1.2;
     word-spacing: -.05em
@@ -568,7 +561,16 @@
     -webkit-border-radius: 4px;
     border-radius: 4px;
     line-height: 1.45;
-    text-rendering: optimizeSpeed
+    text-rendering: optimizeSpeed;
+    word-wrap: break-word
+}
+
+.asciidoctor-content *:not(pre) > code.nobreak {
+    word-wrap: normal
+}
+
+.asciidoctor-content *:not(pre) > code.nowrap {
+    white-space: nowrap
 }
 
 .asciidoctor-content pre, pre > code {
@@ -577,6 +579,14 @@
     font-family: "Droid Sans Mono", "DejaVu Sans Mono", monospace;
     font-weight: 400;
     text-rendering: optimizeSpeed
+}
+
+.asciidoctor-content em em {
+    font-style: normal
+}
+
+.asciidoctor-content strong strong {
+    font-weight: 400
 }
 
 .asciidoctor-content .keyseq {
@@ -2042,4 +2052,370 @@
     .asciidoctor-content .show-for-print {
         display: inherit !important
     }
+}
+
+.asciidoctor-content .CodeRay .line-numbers {
+    border-right: 1px solid #d8d8d8;
+    padding: 0 0.5em 0 .25em
+}
+
+.asciidoctor-content .CodeRay span.line-numbers {
+    display: inline-block;
+    margin-right: .5em;
+    color: rgba(0, 0, 0, .3)
+}
+
+.asciidoctor-content .CodeRay .line-numbers strong {
+    color: rgba(0, 0, 0, .4)
+}
+
+.asciidoctor-content table.CodeRay {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 0;
+    border: 0;
+    background: none
+}
+
+.asciidoctor-content table.CodeRay td {
+    vertical-align: top;
+    line-height: 1.45
+}
+
+.asciidoctor-content table.CodeRay td.line-numbers {
+    text-align: right
+}
+
+.asciidoctor-content table.CodeRay td.line-numbers > pre {
+    padding: 0;
+    color: rgba(0, 0, 0, .3)
+}
+
+.asciidoctor-content table.CodeRay td.code {
+    padding: 0 0 0 .5em
+}
+
+.asciidoctor-content table.CodeRay td.code > pre {
+    padding: 0
+}
+
+.asciidoctor-content .CodeRay .debug {
+    color: #fff !important;
+    background: #000080 !important
+}
+
+.asciidoctor-content .CodeRay .annotation {
+    color: #007
+}
+
+.asciidoctor-content .CodeRay .attribute-name {
+    color: #000080
+}
+
+.asciidoctor-content .CodeRay .attribute-value {
+    color: #700
+}
+
+.asciidoctor-content .CodeRay .binary {
+    color: #509
+}
+
+.asciidoctor-content .CodeRay .comment {
+    color: #998;
+    font-style: italic
+}
+
+.asciidoctor-content .CodeRay .char {
+    color: #04d
+}
+
+.asciidoctor-content .CodeRay .char .content {
+    color: #04d
+}
+
+.asciidoctor-content .CodeRay .char .delimiter {
+    color: #039
+}
+
+.asciidoctor-content .CodeRay .class {
+    color: #458;
+    font-weight: bold
+}
+
+.asciidoctor-content .CodeRay .complex {
+    color: #a08
+}
+
+.asciidoctor-content .CodeRay .constant, .CodeRay .predefined-constant {
+    color: #008080
+}
+
+.asciidoctor-content .CodeRay .color {
+    color: #099
+}
+
+.asciidoctor-content .CodeRay .class-variable {
+    color: #369
+}
+
+.asciidoctor-content .CodeRay .decorator {
+    color: #b0b
+}
+
+.asciidoctor-content .CodeRay .definition {
+    color: #099
+}
+
+.asciidoctor-content .CodeRay .delimiter {
+    color: #000
+}
+
+.asciidoctor-content .CodeRay .doc {
+    color: #970
+}
+
+.asciidoctor-content .CodeRay .doctype {
+    color: #34b
+}
+
+.asciidoctor-content .CodeRay .doc-string {
+    color: #d42
+}
+
+.asciidoctor-content .CodeRay .escape {
+    color: #666
+}
+
+.asciidoctor-content .CodeRay .entity {
+    color: #800
+}
+
+.asciidoctor-content .CodeRay .error {
+    color: #808
+}
+
+.asciidoctor-content .CodeRay .exception {
+    color: inherit
+}
+
+.asciidoctor-content .CodeRay .filename {
+    color: #099
+}
+
+.asciidoctor-content .CodeRay .function {
+    color: #900;
+    font-weight: bold
+}
+
+.asciidoctor-content .CodeRay .global-variable {
+    color: #008080
+}
+
+.asciidoctor-content .CodeRay .hex {
+    color: #058
+}
+
+.asciidoctor-content .CodeRay .integer, .CodeRay .float {
+    color: #099
+}
+
+.asciidoctor-content .CodeRay .include {
+    color: #555
+}
+
+.asciidoctor-content .CodeRay .inline {
+    color: #000
+}
+
+.asciidoctor-content .CodeRay .inline .inline {
+    background: #ccc
+}
+
+.asciidoctor-content .CodeRay .inline .inline .inline {
+    background: #bbb
+}
+
+.asciidoctor-content .CodeRay .inline .inline-delimiter {
+    color: #d14
+}
+
+.asciidoctor-content .CodeRay .inline-delimiter {
+    color: #d14
+}
+
+.asciidoctor-content .CodeRay .important {
+    color: #555;
+    font-weight: bold
+}
+
+.asciidoctor-content .CodeRay .interpreted {
+    color: #b2b
+}
+
+.asciidoctor-content .CodeRay .instance-variable {
+    color: #008080
+}
+
+.asciidoctor-content .CodeRay .label {
+    color: #970
+}
+
+.asciidoctor-content .CodeRay .local-variable {
+    color: #963
+}
+
+.asciidoctor-content .CodeRay .octal {
+    color: #40e
+}
+
+.asciidoctor-content .CodeRay .predefined {
+    color: #369
+}
+
+.asciidoctor-content .CodeRay .preprocessor {
+    color: #579
+}
+
+.asciidoctor-content .CodeRay .pseudo-class {
+    color: #555
+}
+
+.asciidoctor-content .CodeRay .directive {
+    font-weight: bold
+}
+
+.asciidoctor-content .CodeRay .type {
+    font-weight: bold
+}
+
+.asciidoctor-content .CodeRay .predefined-type {
+    color: inherit
+}
+
+.asciidoctor-content .CodeRay .reserved, .CodeRay .keyword {
+    color: #000;
+    font-weight: bold
+}
+
+.asciidoctor-content .CodeRay .key {
+    color: #808
+}
+
+.asciidoctor-content .CodeRay .key .delimiter {
+    color: #606
+}
+
+.asciidoctor-content .CodeRay .key .char {
+    color: #80f
+}
+
+.asciidoctor-content .CodeRay .value {
+    color: #088
+}
+
+.asciidoctor-content .CodeRay .regexp .delimiter {
+    color: #808
+}
+
+.asciidoctor-content .CodeRay .regexp .content {
+    color: #808
+}
+
+.asciidoctor-content .CodeRay .regexp .modifier {
+    color: #808
+}
+
+.asciidoctor-content .CodeRay .regexp .char {
+    color: #d14
+}
+
+.asciidoctor-content .CodeRay .regexp .function {
+    color: #404;
+    font-weight: bold
+}
+
+.asciidoctor-content .CodeRay .string {
+    color: #d20
+}
+
+.asciidoctor-content .CodeRay .string .string .string {
+    background: #ffd0d0
+}
+
+.asciidoctor-content .CodeRay .string .content {
+    color: #d14
+}
+
+.asciidoctor-content .CodeRay .string .char {
+    color: #d14
+}
+
+.asciidoctor-content .CodeRay .string .delimiter {
+    color: #d14
+}
+
+.asciidoctor-content .CodeRay .shell {
+    color: #d14
+}
+
+.asciidoctor-content .CodeRay .shell .delimiter {
+    color: #d14
+}
+
+.asciidoctor-content .CodeRay .symbol {
+    color: #990073
+}
+
+.asciidoctor-content .CodeRay .symbol .content {
+    color: #a60
+}
+
+.asciidoctor-content .CodeRay .symbol .delimiter {
+    color: #630
+}
+
+.asciidoctor-content .CodeRay .tag {
+    color: #008080
+}
+
+.asciidoctor-content .CodeRay .tag-special {
+    color: #d70
+}
+
+.asciidoctor-content .CodeRay .variable {
+    color: #036
+}
+
+.asciidoctor-content .CodeRay .insert {
+    background: #afa
+}
+
+.asciidoctor-content .CodeRay .delete {
+    background: #faa
+}
+
+.asciidoctor-content .CodeRay .change {
+    color: #aaf;
+    background: #007
+}
+
+.asciidoctor-content .CodeRay .head {
+    color: #f8f;
+    background: #505
+}
+
+.asciidoctor-content .CodeRay .insert .insert {
+    color: #080
+}
+
+.asciidoctor-content .CodeRay .delete .delete {
+    color: #800
+}
+
+.asciidoctor-content .CodeRay .change .change {
+    color: #66f
+}
+
+.asciidoctor-content .CodeRay .head .head {
+    color: #f4f
 }
