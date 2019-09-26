@@ -22,3 +22,21 @@ View Type ::
 
 {blank} +
 
+
+Task breakdown
+
+. Setup all Layout
+. Setup all views
+. Test data passing
+.. Title
+.. Meta
+.. Other
+. Diff Maker
+. Directory scanner
+. Descriptor generator
+. Converter
+. Convention set
+. Exporter
+. File Reader
+
+
