@@ -8,25 +8,28 @@ topics:
     description: ''
     summery: ''
     url: '/java/basic/bismillah'
-    file: ''
-    parent: ''
+    filePath: ''
+    parentId: ''
     seo:
-seo:
-  title: ''
-  script:
-    - 'js codes here'
-    - 'second js codes'
-  tags:
-    - placeIn: 'head / body'
-      tag:
-        name: ''
-        content: ''
-        attrs:
-          - name: 'description'
-            content: 'something'
+
+layout:
+  type: ''
+  seo:
+    title: ''
+    script:
+      - 'js codes here'
+      - 'second js codes'
+    tags:
+      - placedIn: 'head / body'
+        tag:
+          name: ''
+          content: ''
+          attrs:
+            - name: 'description'
+              content: 'something'
 
 settings:
-  layout: ''
+  defaultSeo:
   fbComments: false
   fbShare: false
   linkedInShare: false
