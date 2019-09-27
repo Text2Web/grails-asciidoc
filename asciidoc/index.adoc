@@ -23,7 +23,7 @@ View Type ::
 {blank} +
 
 
-Task breakdown
+=== Task breakdown
 
 . Setup all Layout
 . Setup all views
@@ -40,3 +40,10 @@ Task breakdown
 . File Reader
 
 
+{blank} +
+
+=== Directory Structure
+. *Root Directory*: *Descriptor*
+.. *Topics*:
+... *Topic*:
+.... *Chapter*
